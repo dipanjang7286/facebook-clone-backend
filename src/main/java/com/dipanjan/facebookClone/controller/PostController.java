@@ -16,7 +16,7 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-    @PostMapping()
+    @PostMapping
     public Post addPost(@RequestParam Map<String, String> requestParams) throws Exception {
         String strPost = requestParams.get("post");
         String email = requestParams.get("email");
@@ -29,7 +29,7 @@ public class PostController {
         return post;
     }
 
-    @GetMapping()
+    @GetMapping
     public List<Post> getPost(){
         return postService.getPost();
     }

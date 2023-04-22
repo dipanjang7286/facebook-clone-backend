@@ -43,6 +43,6 @@ public class PostServiceImpl implements PostService{
         List<PostEntity> postEntities = postEntityRepository.findAll();
         List<Post> posts = new ArrayList<>();
         posts = postEntities.stream().map(postEntity -> Post.builder().id(postEntity.getId()).timeStamp(postEntity.getTimeStamp()).email(postEntity.getEmail()).name(postEntity.getName()).email(postEntity.getEmail()).post(postEntity.getPost()).image(postEntity.getImage()).profilePic(postEntity.getProfilePic()).build()).collect(Collectors.toList());
-        return null;
+        return posts;
     }
 }
